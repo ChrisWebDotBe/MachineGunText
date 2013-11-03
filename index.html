@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fr" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>MachineGunText - ChrisWeb.be</title>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Author" content="Chrisweb.be" />
+<meta name="Language" content="FR" />
+<meta name="keywords" content="jquery plugin texteffect" />
+<meta name="Description" content="" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans|Gochi+Hand' rel='stylesheet' type='text/css'>
+<link type="text/css" href="Style.css" rel="stylesheet" />
+<script type="text/javascript" src="js/jquery-1.10.1.min.js"></script>
+<script type="text/javascript" src="js/TweenMax.min.js"></script>
+<script type="text/javascript" src="js/MachineGunText.min.js"></script>
+</head>
+<body>
+<section class="contenu">
+<h1>Chrisweb.be - MachineGunText</h1>
+<p>Un plugin sympa pour animer du texte comme une mitraillette...</p>
+<p>Ce plugin nécessite jQuery et GreenSock TweenMax</p>
+<style>
+.MachineGunTextContainer {
+	margin-top:15px;
+	margin-bottom:15px;
+	border:4px solid #0066CC;
+	border-radius:10px;
+}
+.MachineGunTextSentence {
+	font-style:normal;
+}
+</style>
+<script>
+$(document).ready(function() {
+	var options={
+		text:"Voici le résultat de ce plugin ! Ainsi que tous les paramètres disponibles...",
+		height: '100px'
+	}
+	$('#demo1').MachineGunText(options);
+});
+</script>
+<div id="demo1"></div>
+<h2>Téléchargement</h2>
+<p>jQuery : <a href="http://code.jquery.com/" target="_blank">ici</a></p>
+<p>TweenMax : <a href="http://www.greensock.com/tweenmax/" target="_blank">ici</a></p>
+<p>Le code source sur GitHub : <a href="https://github.com/ChrisWebDotBe/MachineGunText" target="_blank">MachineGunText</a></p>
+<br/>
+<h2>Utilisation</h2>
+<div class="codesource">
+<pre>
+&lt;html>
+&lt;head>
+	&lt;script type="text/javascript" src="js/jquery-1.10.1.min.js">&lt;/script>
+	&lt;script type="text/javascript" src="js/TweenMax.min.js">&lt;/script>
+	&lt;script type="text/javascript" src="js/MachineGunText.min.js">&lt;/script>
+&lt;/head>
+&lt;body>
+&lt;script>
+	$(document).ready(function() {
+	  var options={
+		text:"Voici le résultat de ce plugin ! Ainsi que tous les paramètres disponibles...",
+		height: '100px'
+	  }
+	  $('#demo1').MachineGunText(options);
+	});
+&lt;/script>
+&lt;/body>
+&lt;/html>
+</pre>
+</div>
+<br/>
+<h2>Paramètres</h2>
+<div class="params">
+<p class="titres"><strong>Nom</strong><span class="col1"><strong>Par défaut</strong></span><span class="col2"><strong>Explication</strong></span></p>
+<p>width<span class="col1">'100%'</span><span class="col2">Largeur du conteneur</span></p>
+<p>height<span class="col1">'50px'</span><span class="col2">Hauteur du conteneur</span></p>
+<p>bgcolor<span class="col1">'#000'</span><span class="col2">Couleur de fond</span></p>
+<p>bgimage<span class="col1">''</span><span class="col2">Image de fond (facultative)</span></p>
+<p>bgrepeat<span class="col1">'no-repeat'</span><span class="col2">Répétition de l'image de fond</span></p>
+<p>bgposition<span class="col1">'top center'</span><span class="col2">Position de l'image de fond</span></p>
+<p>bgattachment<span class="col1">'fixed'</span><span class="col2">Attachement de l'image de fond</span></p>
+<p>bgsize<span class="col1">'cover'</span><span class="col2">Dimension de l'image de fond (cover,contain,auto)</span></p>
+<p style="height:90px;">text<span class="col1">'votre texte'</span><span class="col2">Le texte à faire défiler.  Peut être une chaine ou un tableau, le tableau servant à définir où il faut couper le texte (fin à chaque .?!)<br/><br/>Par exemple : ['Phrase 1','Phrase 2','Dernière phrase']</span></p>
+<p>maxlenght<span class="col1">12</span><span class="col2">Nombre de caractères maximum pour couper le texte</span></p>
+<p>fontcolor<span class="col1">'#fff'</span><span class="col2">Couleur du texte</span></p>
+<p>fontsize<span class="col1">'50px'</span><span class="col2">Hauteur du texte</span></p>
+<p>fontfamily<span class="col1">"Arial"</span><span class="col2">Police de caractère</span></p>
+<p>fontweight<span class="col1">'400'</span><span class="col2">Grosseur de la police</span></p>
+<p>animsentencemaxduration<span class="col1">0.5</span><span class="col2">Temps maximum pour chaque phrase</span></p>
+<p>animdelay<span class="col1">0.6</span><span class="col2">Temps en seconde avant de lancer l'animation</span></p>
+<p>animrepeat<span class="col1">-1</span><span class="col2">Nombre de répétitions (-1 : à l'infini, 0 : aucune)</span></p>
+<p>animrepeatdelay<span class="col1">2</span><span class="col2">Temps en seconde avant chaque répétition</span></p>
+<p>animdramaticpause<span class="col1">true</span><span class="col2">Active une pause entre chaque phrase</span></p>
+<p>animdramaticpauseduration<span class="col1">0.6</span><span class="col2">Temps en seconde de la pause</span></p>
+<p>animmaxscale<span class="col1">1.2</span><span class="col2">Echelle maximum du texte grossi</span></p>
+<p>callback<span class="col1">null</span><span class="col2">Fonction à appeler à la fin de l'animation</span></p>
+<p>callbacksentence<span class="col1">null</span><span class="col2">Fonction à appeler à la fin de chaque phrase</span></p>
+</div>
+<br/>
+<h2>CSS</h2>
+<p>Pour mettre en forme le conteneur ou chaque phrase, 2 classes sont disponibles :</p>
+<div class="codesource">
+<pre>
+&lt;style>
+.MachineGunTextContainer {
+	margin-top:15px;
+	margin-bottom:15px;
+	border:4px solid #06C;
+	border-radius:10px;
+}
+.MachineGunTextSentence {
+	font-style:italic;
+}
+&lt;/style>
+</pre>
+</div>
+<br/>
+<h2>Licence</h2>
+<p>Vous pouvez utiliser ce code n'importe ou, le modifier à votre guise, ou m'envoyer vos améliorations <a href="mailto:contact@chrisweb.be">ici</a></p>
+<br/>
+<h2>Exemples</h2>
+<script>
+$(document).ready(function() {
+	var options={
+		width: '500px',
+		height: '250px',
+		bgcolor: '#004',
+		text: "Ce plugin est formidable ! C'est un bon moyen de mettre en valeur un texte plublicitaire. Il est très paramétrable. Des idées ? Faites en part en me laissant un message !",
+		maxlenght: 12,
+		fontcolor: '#fff',
+		fontsize: '70px',
+		fontfamily: "Verdana",
+		animsentencemaxduration: 0.4,
+		animdelay: 0.2,
+		animrepeat: -1,
+		animrepeatdelay: 1,
+		animdramaticpause: true,
+		animdramaticpauseduration: 0.6,
+		animmaxscale: 1.5,
+	}
+	$('#demo2').MachineGunText(options);
+});
+</script>
+<div id="demo2" style="margin-left:0"></div>
+<p>Une version avec tous les paramètres :</p>
+<div class="codesource">
+<pre>
+&lt;script>
+$(document).ready(function() {
+  var cpt=0;
+  var options={
+	width: '800px',
+	height: '350px',
+	bgcolor: '#FE1',
+	bgimage: '',
+	bgrepeat: 'no-repeat',
+	bgposition: 'top center',
+	bgattachment: 'fixed',
+	bgsize: 'cover',
+	text: "don't forget to set text",
+	maxlenght: 12,
+	fontcolor: '#412',
+	fontsize: '70px',
+	fontfamily: "Comic",
+	fontweight: '700',
+	animsentencemaxduration: 1.5,
+	animdelay: 0.2,
+	animrepeat: 1,
+	animrepeatdelay: 1,
+	animdramaticpause: true,
+	animdramaticpauseduration: 0.9,
+	animmaxscale: 2.2,
+	callback: function() {alert('fin après '+cpt+' phrases');},
+	callbacksentence: function () {cpt++;}
+	}; 
+  }
+  $('#votreconteneur').MachineGunText(options);
+});
+&lt;/script>
+</pre>
+</div>
+<br/>
+<input type="button" value="Essayer" onClick="Essayer()"/>
+<br/>
+<br/>
+<script>
+function Essayer() {
+  var cpt=0;
+  var options={
+	width: '800px',
+	height: '350px',
+	bgcolor: '#FE1',
+	bgimage: '',
+	bgrepeat: 'no-repeat',
+	bgposition: 'top center',
+	bgattachment: 'fixed',
+	bgsize: 'cover',
+	text: "don't forget to set text",
+	maxlenght: 12,
+	fontcolor: '#412',
+	fontsize: '70px',
+	fontfamily: "Comic Sans MS",
+	fontweight: '700',
+	animsentencemaxduration: 1.5,
+	animdelay: 0.2,
+	animrepeat: 1,
+	animrepeatdelay: 1,
+	animdramaticpause: true,
+	animdramaticpauseduration: 0.9,
+	animmaxscale: 2.2,
+	callback: function() {alert('fin après '+cpt+' phrases');},
+	callbacksentence: function () {cpt++;}
+  }; 
+  $('#votreconteneur').MachineGunText(options);
+  $('html, body').animate({scrollTop:$(document).height()}, 'fast');
+};
+</script>
+<div id="votreconteneur" style="margin-left:0"></div>
+</section>
+</body>
+</html>

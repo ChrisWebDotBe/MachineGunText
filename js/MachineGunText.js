@@ -72,7 +72,7 @@
 						if(params.callback)	{
 							params.callback();
 						}
-					},
+					}, 
 					repeat:params.animrepeat,
 					repeatDelay:params.animrepeatdelay
 				}),
